@@ -1,6 +1,9 @@
 package ca.ualberta.cs.lonelytwitter;
 
+import java.util.Date;
 import java.util.List;
+
+import ca.ualberta.cs.lonelytwitter.model.NormalLonelyTweet;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,7 +13,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class LonelyTwitterActivity extends Activity {
+public class MainActivity extends Activity {
 
 	private EditText bodyText;
 	private ListView oldTweetsList;
@@ -47,7 +50,7 @@ public class LonelyTwitterActivity extends Activity {
 		//if (text.contains("*")) {
 		//	tweet = new ImportantTweet(text);
 		//} else {
-			tweet = new NormalLonelyTweet(text);
+			tweet = new NormalLonelyTweet(text, new Date());
 		//}
 
 		if (tweet.isValid()) {
